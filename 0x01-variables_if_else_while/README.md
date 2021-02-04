@@ -1,0 +1,1 @@
+this folder containers exercise for  variables in C programming
