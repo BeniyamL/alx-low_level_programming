@@ -9,8 +9,7 @@ int main(void)
 char alpha = 'a';
 for (int i = 0; i < 10; i++)
 {
-char a = i + '0';
-putchar(a);
+putchar(i + '0');
 }
 while (alpha <= 'f')
 {
