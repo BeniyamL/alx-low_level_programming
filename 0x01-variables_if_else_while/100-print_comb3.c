@@ -12,7 +12,7 @@ for (i = 0; i < 10; i++)
 int j;
 for (j = i; j < 10; j++)
 {
-if ( i != j)
+if (i != j)
 {
 putchar(i + '0');
 putchar(j + '0');
@@ -26,4 +26,4 @@ putchar(' ');
 }
 putchar('\n');
 return (0);
-}       
+}
