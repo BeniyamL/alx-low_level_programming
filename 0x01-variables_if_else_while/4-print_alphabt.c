@@ -12,8 +12,8 @@ while (alpha <= 'z')
 if ((alpha != 'q') && (alpha != 'e'))
 {
 putchar(alpha);
-alpha++;
 }
+aplha++;
 }
 putchar('\n');
 return (0);
