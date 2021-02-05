@@ -13,7 +13,7 @@ if ((alpha != 'q') && (alpha != 'e'))
 {
 putchar(alpha);
 }
-aplha++;
+alpha++;
 }
 putchar('\n');
 return (0);
