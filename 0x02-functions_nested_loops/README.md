@@ -1,0 +1,1 @@
+this folder contains exercise for c programming function and nested loops
