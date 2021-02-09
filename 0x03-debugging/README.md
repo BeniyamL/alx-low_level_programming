@@ -1,0 +1,1 @@
+this folder contains exercises for debugging a c program
