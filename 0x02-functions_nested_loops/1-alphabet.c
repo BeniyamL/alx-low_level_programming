@@ -1,21 +1,4 @@
-#include <stdio.h>
 #include "holberton.h"
-/**
- * print_alphabet - function declaration
- */
-void print_alphabet(void);
-
-/**
- * main - Entry point
- *
- * Return: Always 0 (Success)
- */
-int main(void)
-{
-print_alphabet();
-return (0);
-}
-
 /**
  *print_alphabet -finds alphabet in lower case
  *
