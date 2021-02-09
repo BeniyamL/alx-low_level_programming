@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include "holberton.h"
 /**
  * main - Entry point
  *
@@ -22,6 +21,6 @@ if (z % 2 == 0)
 s += z;
 }
 }
-printf("%lu\n", s)
+printf("%lu\n", s);
 return (0);
 }
