@@ -6,11 +6,11 @@
  */
 int main(void)
 {
-unsigned long x, y, z, sum;
+unsigned long x, y, z, s;
 z = 0;
 x = 0;
 y = 1;
-sum = 0;
+s = 0;
 while (z < 4000000)
 {
 z = x + y;
@@ -18,9 +18,9 @@ x = y;
 y = z;
 if (z % 2 == 0)
 {
-sum += z;
+s += z;
 }
 }
-printf("%lu\n", sum)
+printf("%lu\n", s)
 return (0);
 }
