@@ -17,6 +17,6 @@ x = y;
 y = z;
 printf("%lu, ", z);
 }
-printf("\n");
+printf("%lu\n", z + x);
 return (0);
 }
