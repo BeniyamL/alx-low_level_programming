@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include "holberton.h"
 /**
  * main - Entry point
  *
@@ -11,7 +12,7 @@ z = 0;
 x = 0;
 y = 1;
 s = 0;
-while (z < 4000000)
+while (z <= 4000000)
 {
 z = x + y;
 x = y;
