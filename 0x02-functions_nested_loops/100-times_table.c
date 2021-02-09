@@ -18,7 +18,7 @@ for (i = 0; i <= n; i++)
 for (j = 0; j <= n; j++)
 {
 p = i * j;
-if (p < 10)
+if (p < 10 && j != 0)
 {
 _putchar(' ');
 _putchar(' ');
@@ -30,11 +30,15 @@ _putchar(' ');
 _putchar((p / 10) + '0');
 _putchar((p % 10) + '0');
 }
-else if (p >= 100)
+else if (p >= 100 && j !=0)
 {
 _putchar((p / 100) + '0');
 _putchar(((p / 10) % 10) + '0');
 _putchar((p % 10) + '0');
+}
+else 
+{
+_putchar(p + '0');
 }
 if (j != n)
 {
