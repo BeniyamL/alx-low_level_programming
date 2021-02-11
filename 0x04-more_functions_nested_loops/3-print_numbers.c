@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "holberton.h"
 /**
  * print_numbers - print numbers form 0 - 9
  */

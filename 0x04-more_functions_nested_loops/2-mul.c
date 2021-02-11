@@ -1,3 +1,5 @@
+#include <stdio.h>
+#include "holberton.h"
 /**
  * mul - finds multiplication of two numbers
  * @a: the first number
