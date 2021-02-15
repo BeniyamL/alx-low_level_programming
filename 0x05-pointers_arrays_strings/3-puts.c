@@ -1,4 +1,3 @@
-#include <unistd.h>
 /**
  * _puts - write to stdout
  * @str: the string to be printed
@@ -9,7 +8,8 @@ int i;
 i = 0;
 while (str[i] != '\0')
 {
-write(1, &str[i], 1);
+_putchar(str[i]);
 i++;
 }
+_putchar('\n');
 }
