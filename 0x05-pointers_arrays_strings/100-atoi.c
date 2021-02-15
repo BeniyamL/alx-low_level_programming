@@ -6,15 +6,11 @@
  */
 int _atoi(char *s)
 {
-  int i, j, n, sign;
-  i = 0;
+  int j, n, sign;
+  j = 0;
   n = 0;
   sign = 1;
-  while (s[i] != '\0')
-    {
-      i++;
-    }
-  for (j = 0; j < i; j++)
+  while (s[j] != '\0')
     {
       if (s[j] == '-')
 	{
@@ -28,6 +24,7 @@ int _atoi(char *s)
 	{
 	  break;
 	}
+      j++;
     }
 
   if (n == 0)
