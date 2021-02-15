@@ -1,0 +1,4 @@
+/**
+ * reset_to_98 - rese to 98 using the address
+ */
+void reset_to_98(int *n);
