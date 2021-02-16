@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * puts2 - print even characters
  * @str: character to be printed
