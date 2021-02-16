@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * _atoi - convert string to integer
  * @s: the string to be converted
@@ -12,7 +13,7 @@ n = 0;
 sign = 1;
 while (s[j] != '\0')
 {
-if (s[j] == '-')
+if (s[j] == '-' && !(s[j] >= '0' && s[j] <= '9'))
 {
 sign = sign * -1;
 }
