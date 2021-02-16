@@ -32,7 +32,6 @@ return (0);
 }
 else
 {
-n = (sign *n);
-return (n);
+return (sign *n);
 }
 }
