@@ -12,7 +12,7 @@
  * print_array - print an array of n elements
  * _strcpy - copy the source string to a destination
  */
-int _putchar(char);    
+int _putchar(char c);    
 void reset_to_98(int *n);
 void swap_int(int *a, int *b);
 int _strlen(char *s);
