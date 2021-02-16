@@ -7,21 +7,21 @@
  **/
 void rev_string(char *s)
 {
-int i, k, j;
+int i, k;
 k = 0;
+j = 0;
 char str[2000]
 while (s[k] != '\0')
 {
 k++;
 }
-j = 0;
-for (i = k; i > 0; i--)
+for (; k > 0; k--)
 {
-str[j] = s[i - 1];
+str[j] = s[k - 1];
 j++;
 }
-for (i = 0; i < k; i++)
+for (k; k < j; k++)
 {
-s[i] = str[i];
+s[k] = str[k];
 }
 }
