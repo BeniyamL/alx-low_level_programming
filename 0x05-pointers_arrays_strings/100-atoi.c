@@ -23,7 +23,7 @@ break;
 }
 if (s[j] == '-')
 {
-sign = sign * -1
+sign = sign * -1;
 }
 j++;
 }
