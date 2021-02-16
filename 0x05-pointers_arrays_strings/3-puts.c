@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * _puts - write to stdout
  * @str: the string to be printed
