@@ -7,7 +7,7 @@
  */
 char *rot13(char *s)
 {
-	char ltr = {
+	char ltr[] = {
 	"NOPQRSTUVWXYZABCDEFGHIJKLM[\\]^_`nopqrstuvwxyzabcdefghijklm"
 	};
 
