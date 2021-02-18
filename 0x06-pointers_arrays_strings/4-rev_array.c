@@ -6,19 +6,15 @@
  */
 void reverse_array(int *a, int n)
 {
-	int i, j;
-	int x[n];
+	int i, temp;
 
 	i = 0;
-	j = n;
-	while (i < n)
+
+	for (i = 0; i < n; i++)
 	{
-		x[i] = a[j - 1];
-		j--;
-		i++;
-	}
-	for (; j < i; j++)
-	{
-		a[j] = x[j];
+		temp = a[n - 1];
+		a[n - 1] = a[i];
+		a[i] = temp;
+		n--;
 	}
 }
