@@ -1,3 +1,4 @@
+#include "holberton.h"
 /**
  * _strcat - function to concatenate two strings
  * @dest: the first string
