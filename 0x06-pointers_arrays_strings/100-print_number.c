@@ -7,7 +7,7 @@
  *
  * Return: nothing
  */
-void ReduceTo100(int n, char sign)
+void ReduceTo100(int n, int sign)
 {
 	int rmdr;
 	int firstDigit, secondDigit;
@@ -19,13 +19,19 @@ void ReduceTo100(int n, char sign)
 	{
 		firstDigit = n / 10;
 		secondDigit = n % 10;
-		_putchar(sign);
+		if (sign == 1)
+		{
+			_putchar('-');
+		}
 		_putchar(firstDigit + '0');
 		_putchar(secondDigit + '0');
 	}
 	else if (n < 10)
 	{
-		_putchar(sign);
+		if (sign == 1)
+		{
+			_putchar('-');
+		}
 		_putchar(n + '0');
 	}
 	else
@@ -42,12 +48,12 @@ void ReduceTo100(int n, char sign)
  */
 void print_number(int n)
 {
-	char sign = '\0';
+	int sign = 0;
 	int firstDigit, secondDigit;
 
 	if (n < 0)
 	{
-		sign = '-';
+		sign = 1;
 		n = n * -1;
 	}
 	if (n >= 100)
@@ -58,13 +64,19 @@ void print_number(int n)
 	{
 		firstDigit = n / 10;
 		secondDigit = n % 10;
-		_putchar(sign);
+		if (sign == 1)
+		{
+			_putchar('-');
+		}
 		_putchar(firstDigit + '0');
 		_putchar(secondDigit + '0');
 	}
 	else
 	{
-		_putchar(sign);
+		if (sign == 1)
+		{
+			_putchar('-');
+		}
 		_putchar(n + '0');
 	}
 }
