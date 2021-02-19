@@ -1,67 +1,59 @@
 #include <stdio.h>
-#include <unistd.h>
 #include "holberton.h"
 /**
- * ReduceTo100 - function that reduce a number
- * @n: the number to be printed
- * @sign: the sign of a number
- */
-void ReduceTo100(int n, char sign)
+ * exponent - x to the power of y
+ * @x: base number
+ * @y: exponent
+ * Description: calcuates x^y
+ * Return: x^y
+ *
+ **/
+int exponent(int x, int y)
 {
-	int temp, rmdr;
-	int firstDigit, secondDigit;
+	int power;
 
-	rmdr = n % 10;
-	n = n / 10;
-
-	if (n < 100 && n >= 10)
+	power = x;
+	if (x == 0)
+		return (0);
+	if (y == 0)
+		return (1);
+	while (y >= 2)
 	{
-		firstDigit = n / 10;
-		secondDigit = n % 10;
-		_putchar(sign);
-		_putchar(firstDigit + '0');
-		_putchar(secondDigit + '0');
+		power  = power * x;
+		y--;
 	}
-	else if (n < 10)
-	{
-		_putchar(sign);
-		_putchar(n + '0');
-	}
-	else
-	{
-		ReduceTo100(n, sign);
-	}
-	_putchar(rmdr + '0');
+	return (power);
 }
 /**
- * print_number - function that print a number using putchar
- * @n: the number to be printed
- */
-void print_number(int n)
+ * print_number - print an int using only _putchar
+ * @number: int to be printed by function
+ *
+ * Return: nothing
+ **/
+void print_number(int number)
 {
-	char sign = '\0';
-	int firstDigit, secondDigit;
+	int size, digit, counter, sign;
 
-	if (n < 0)
+	sign = 1;
+	digit = 0;
+	size = 1;
+	counter = number;
+	if (number < 0)
 	{
-		sign = '-';
-		n = n * -1;
+		_putchar('-');
+		sign = -1;
 	}
-	if (n >= 100)
+	for (; counter >= 10 || counter <= -10; size++)
 	{
-		ReduceTo100(n, sign);
+		counter = counter / 10;
 	}
-	else if (n < 100 && n >= 10)
+	counter = number;
+	while (size >= 2)
 	{
-		firstDigit = n / 10;
-		secondDigit = n % 10;
-		_putchar(sign);
-		_putchar(firstDigit + '0');
-		_putchar(secondDigit + '0');
+		digit = (counter / exponent(10, size - 1)) * sign;
+		_putchar(digit + '0');
+		counter = counter % exponent(10, size - 1);
+		size--;
 	}
-	else
-	{
-		_putchar(sign);
-		_putchar(n + '0');
-	}
+	_putchar(sign * counter % 10 + '0');
 }
