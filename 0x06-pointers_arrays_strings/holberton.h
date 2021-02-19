@@ -8,6 +8,8 @@
  * cap_string - string that capitalize first character of a word
  * leet - funtion that encode a string
  * rot13 -function to encode a string using rot13
+ * print_number - fucntion that prints number using putchar
+ * infinte_add - function that adds two integers
  */
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
