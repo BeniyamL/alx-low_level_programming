@@ -10,7 +10,8 @@
  * rot13 -function to encode a string using rot13
  * print_number - fucntion that prints number using putchar
  * infinte_add - function that adds two integers
- */
+ * ReduceTo100 - function that reduce numbers to multiple of 10 
+*/
 int _putchar(char c);
 char *_strcat(char *dest, char *src);
 char *_strncat(char *dest, char *src, int n);
@@ -22,4 +23,5 @@ char *cap_string(char *s);
 char *leet(char *s);
 char *rot13(char *s);
 void print_number(int n);
+void ReduceTo100(int n, char sign);
 char *infinite_add(char *n1, char *n2, char *r, int size_r);
