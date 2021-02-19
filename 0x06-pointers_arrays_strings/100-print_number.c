@@ -9,7 +9,7 @@
  */
 void ReduceTo100(int n, char sign)
 {
-	int temp, rmdr;
+	int rmdr;
 	int firstDigit, secondDigit;
 
 	rmdr = n % 10;
