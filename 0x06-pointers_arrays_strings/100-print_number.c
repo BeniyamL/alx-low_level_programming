@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
- * print_number - function that print numbers using only putchar
+ * ReduceTo100 - function that reduce a number
  * @n: the number to be printed
+ * @sign: the sign of a number
  */
 void ReduceTo100(int n, char sign)
 {
@@ -30,11 +31,15 @@ void ReduceTo100(int n, char sign)
 	}
 	_putchar(rmdr + '0');
 }
+/**
+ * print_number - function that print a number using putchar
+ * @n: the number to be printed
+ */
 void print_number(int n)
 {
 	char sign = '\0';
 	int firstDigit, secondDigit;
-    
+
 	if (n < 0)
 	{
 		sign = '-';
