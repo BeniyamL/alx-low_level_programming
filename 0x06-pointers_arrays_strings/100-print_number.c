@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "holberton.h"
+#include <unistd.h>
 /**
  * ReduceTo100 - function that reduce a number
  * @n: the number to be printed
