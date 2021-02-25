@@ -1,5 +1,5 @@
 #include "holberton.h"
-int palindrome(char *s);
+int palindrome(char *s, int i, int l);
 int _strlen(char *s);
 /**
  * is_palindrome - function that check whether a string is palindrome
