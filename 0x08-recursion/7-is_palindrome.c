@@ -29,7 +29,7 @@ int palindrome(char *s, int i, int len)
 	{
 		i++;
 		len--;
-		palindrome(s, i, l);
+		palindrome(s, i, len);
 	}
 	else
 	{
