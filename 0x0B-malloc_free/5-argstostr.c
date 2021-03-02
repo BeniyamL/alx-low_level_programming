@@ -15,7 +15,7 @@ char *argstostr(int ac, char **av)
 	size = 0;
 	index = 0;
 
-	if (ac == 0 || av == NULL)
+	if (ac <= 0 || av == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
 	{
@@ -33,11 +33,8 @@ char *argstostr(int ac, char **av)
 			newarray[index] = av[i][j];
 			index++;
 		}
-		if (i != ac - 1)
-		{
-			newarray[index] = '\n';
-			index++;
-		}
+		newarray[index] = '\n';
+		index++;
 	}
 	newarray[size] = '\0';
 	return (newarray);

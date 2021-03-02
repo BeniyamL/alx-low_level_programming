@@ -17,7 +17,7 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	size = findsize(str);
-	newarray = malloc((size + 1) * sizeof(char));
+	newarray = malloc((size + 1) * sizeof(char *));
 	if (newarray == NULL)
 		return (NULL);
 
@@ -29,7 +29,7 @@ char **strtow(char *str)
 		newarray[i] = malloc((wordlen + 1) * sizeof(char));
 		if (newarray[i] == NULL)
 		{
-			for (j = 0 ; j < i; j++)
+			for (j = 0 ; j <= i; j++)
 				free(newarray[j]);
 			free(newarray);
 			return (NULL);
