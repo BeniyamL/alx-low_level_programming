@@ -36,6 +36,6 @@ char *argstostr(int ac, char **av)
 		newarray[index] = '\n';
 		index++;
 	}
-	newarray[size] = '\0';
+	newarray[index] = '\0';
 	return (newarray);
 }

@@ -17,6 +17,8 @@ char **strtow(char *str)
 	if (str == NULL || str[0] == '\0')
 		return (NULL);
 	size = findsize(str);
+	if (size == 0)
+                return (NULL);
 	newarray = malloc((size + 1) * sizeof(char *));
 	if (newarray == NULL)
 		return (NULL);
