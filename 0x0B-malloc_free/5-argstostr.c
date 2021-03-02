@@ -23,6 +23,8 @@ char *argstostr(int ac, char **av)
 			size++;
 		size += 1;
 	}
+	if (size == 0)
+		return (NULL);
 	newarray = malloc(size * sizeof(char));
 	if (newarray == NULL)
 		return (NULL);
