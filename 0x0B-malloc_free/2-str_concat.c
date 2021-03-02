@@ -23,7 +23,7 @@ char *str_concat(char *s1, char *s2)
 		size++;
 	for (i = 0; s2[i]; i++)
 		size++;
-	newarray = malloc(size * sizeof(char));
+	newarray = malloc((size + 1) * sizeof(char));
 	if (newarray == NULL)
 		return (NULL);
 	for (i = 0; s1[i]; i++)
@@ -36,5 +36,6 @@ char *str_concat(char *s1, char *s2)
 		newarray[index] = s2[i];
 		index++;
 	}
+	newarray[index] = '\0';
 	return (newarray);
 }
