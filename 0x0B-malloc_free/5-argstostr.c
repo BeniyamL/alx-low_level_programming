@@ -25,7 +25,7 @@ char *argstostr(int ac, char **av)
 	}
 	if (size == 0)
 		return (NULL);
-	newarray = malloc(size * sizeof(char));
+	newarray = malloc((size + 1) * sizeof(char));
 	if (newarray == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
