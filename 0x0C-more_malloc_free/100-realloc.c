@@ -13,7 +13,7 @@ void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 	char *memory;
 
 	if (old_size == new_size)
-                return (ptr);
+		return (ptr);
 	if (ptr == NULL)
 	{
 		memory = malloc(new_size);
