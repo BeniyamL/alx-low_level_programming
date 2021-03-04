@@ -25,10 +25,10 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		size1++;
 	for (i = 0; s2[i]; i++)
 		size2++;
-	if (n > size2)
-		newarray = malloc((size1 + n + 1) * sizeof(char));
-	else
+	if (n >= size2)
 		newarray = malloc((size1 + size2 + 1) * sizeof(char));
+	else
+		newarray = malloc((size1 + n + 1) * sizeof(char));
 	if (newarray == NULL)
 		return (NULL);
 	for (i = 0; s1[i]; i++)
