@@ -18,6 +18,6 @@ return ('\0');
 }
 newd->name =  name;
 newd->age =  age;
-ewd->owner =  owner;
+newd->owner =  owner;
 return (newd);
 }
