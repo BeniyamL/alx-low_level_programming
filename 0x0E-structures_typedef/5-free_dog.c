@@ -16,7 +16,7 @@ free(d->name);
 }
 if (d->owner != NULL)
 {
-free(d->owner)
+free(d->owner);
 }
 free(d);
 }
