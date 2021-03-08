@@ -1,0 +1,1 @@
+this folder contains exercise for preprocessor in c programming
