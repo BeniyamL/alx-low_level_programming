@@ -32,7 +32,7 @@ int main(int  ac, char *argv[])
 		printf("%s\n", "Error");
 		exit(99);
 	}
-	result = get_op_func(op)(num1, nu2);
+	result = get_op_func(op)(num1, num2);
 	printf("%d\n", result);
 	return (0);
 }
