@@ -22,17 +22,17 @@ int main(int  ac, char *argv[])
 	num1 = atoi(argv[1]);
 	num2 = atoi(argv[3]);
 	op = argv[2];
-	if (*op != '+' && *op != '-' && *op != '*' && *op != '/' && *op != '%')
-	{
-		printf("%s\n", "Error");
-		exit(99);
-	}
 	if ((*op == '/' || *op == '%') && num2 == 0)
 	{
 		printf("%s\n", "Error");
 		exit(100);
 	}
-	result = get_op_func(op)(num1, num2);
+	if (get_op_func(op)(num1, num2) == NULL)
+	{
+		printf("%s\n", "Error");
+		exit(99);
+	}
+	result = get_op_func(op)(num1, nu2);
 	printf("%d\n", result);
 	return (0);
 }
