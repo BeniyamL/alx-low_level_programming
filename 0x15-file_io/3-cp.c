@@ -17,10 +17,10 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 	buff = create_buffer(argv[2]);
-	fdfrom = open(argv[1], O_RDWR);
-	fdto = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	fdfrom = open(argv[1], O_RDONLY);
+	fdto = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
+	fdr = read(fdfrom, buff, 1024);
 	do {
-		fdr = read(fdfrom, buff, 1024);
 		if (fdr == -1 || fdfrom == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -34,6 +34,7 @@ int main(int argc, char *argv[])
 			free(buff);
 			exit(99);
 		}
+		fdr = read(fdfrom, buff, 1024);
 		fdto = open(argv[2], O_WRONLY | O_APPEND);
 	} while (fdr > 0);
 	free(buff);
