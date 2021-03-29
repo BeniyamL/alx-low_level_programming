@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
 	char *buff;
-	int i, fdfrom, fdto, fdw, fdr, fdc;
+	int fdfrom, fdto, fdw, fdr;
 
 	if (argc != 3)
 	{
@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
 			exit(99);
 		}
 	} while (fdr > 0);
-	free(buffer);
+	free(buff);
 	close_file(fdfrom);
 	close_file(fdto);
 	return (0);
@@ -52,7 +52,6 @@ void close_file(int fd)
 		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", fd);
 		exit(100);
 	}
-	return (0);
 }
 /**
  * create_buffer - create buffer
