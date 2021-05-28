@@ -65,6 +65,20 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	new_node->value = strdup(value);
 	new_node->next = ht->array[index];
 	ht->array[index] = new_node;
+	node_connect(ht, new_node, key);
+	return (1);
+}
+/**
+ * node_connect - connect the created node
+ * @ht: the given hash table
+ * @new_node: the newly created node
+ * @key: the key of the hash table
+ *
+ * Return: nothing
+ **/
+void node_connect(shash_table_t *ht, shash_node_t *new_node, const char *key)
+{
+	shash_node_t *cur = NULL;
 
 	if (ht->shead == NULL)
 	{
@@ -75,8 +89,8 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	else if (strcmp(ht->shead->key, key) > 0)
 	{
-		new_node->snext = ht->shead;
 		new_node->sprev = NULL;
+		new_node->snext = ht->shead;
 		ht->shead->sprev = new_node;
 		ht->shead = new_node;
 	}
@@ -87,13 +101,12 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 			cur = cur->snext;
 		new_node->snext = cur->snext;
 		new_node->sprev = cur;
-		cur->snext = new_node;
 		if (cur->snext == NULL)
 			ht->stail = new_node;
 		else
 			cur->snext->sprev = new_node;
+		cur->snext = new_node;
 	}
-	return (1);
 }
 /**
  * shash_table_get - retrieves a value associated with a key
@@ -135,8 +148,55 @@ void shash_table_print(const shash_table_t *ht)
 			printf("'%s': '%s'", cur->key, cur->value);
 		else
 			printf("'%s': '%s', ", cur->key, cur->value);
-		cur = cur->next;
+		cur = cur->snext;
 	}
 	printf("}\n");
 }
+/**
+ * shash_table_print_rev - function to print the hash table in rev order
+ * @ht: the hash table
+ *
+ * Return: nothing
+ **/
+void shash_table_print_rev(const shash_table_t *ht)
+{
+	shash_node_t *cur;
 
+	if (ht == NULL)
+		return;
+	printf("{");
+	cur = ht->stail;
+	while (cur)
+	{
+		if (cur->sprev == NULL)
+			printf("'%s': '%s'", cur->key, cur->value);
+		else
+			printf("'%s': '%s', ", cur->key, cur->value);
+		cur = cur->sprev;
+	}
+	printf("}\n");
+}
+/**
+ * shash_table_delete - function to delete hash table
+ * @ht: the given hash table
+ *
+ * Return: nothing
+ **/
+void shash_table_delete(shash_table_t *ht)
+{
+	shash_node_t *cur, *tmp;
+
+	cur = ht->shead;
+	while (cur)
+	{
+		tmp = cur->snext;
+		free(cur->key);
+		free(cur->value);
+		free(cur);
+		cur = tmp;
+	}
+	if (ht->array)
+		free(ht->array);
+	if (ht)
+		free(ht);
+}
