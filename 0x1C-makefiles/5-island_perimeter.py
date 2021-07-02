@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" module to define the island_perimeter function """
 
 
 def island_perimeter(grid):
