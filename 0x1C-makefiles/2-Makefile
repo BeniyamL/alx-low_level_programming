@@ -1,0 +1,8 @@
+#simple make files using varibles and object files
+
+CC = gcc
+SRC = main.c holberton.c
+OBJ = $(SRC:.c=.o)
+NAME = holberton
+all : $(OBJ)
+	$(CC) $(OBJ) -o $(NAME)

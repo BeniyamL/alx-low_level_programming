@@ -1,0 +1,6 @@
+#simple make files using varibles
+
+CC = gcc
+SRC = main.c holberton.c
+all : $(SRC)
+	$(CC) $(SRC) -o holberton
