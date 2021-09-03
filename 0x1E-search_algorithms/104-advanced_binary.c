@@ -23,12 +23,12 @@ int binary_search_recursive(int *array, size_t l, size_t r, int value)
 			printf("%d, ", array[i]);
 	}
 	m = (l + r) / 2;
-	if (value == array[m])
+	if (value == array[m] && (m == l || array[m - 1] != value))
 		return (m);
-	else if (value < array[m])
-		return(binary_search_recursive(array, l, m - 1, value));
+	else if (value <= array[m])
+		return (binary_search_recursive(array, l, m, value));
 	else
-		return(binary_search_recursive(array, m + 1, r, value));
+		return (binary_search_recursive(array, m + 1, r, value));
 }
 /**
  * advanced_binary - function to search using recursive approch
@@ -42,5 +42,5 @@ int advanced_binary(int *array, size_t size, int value)
 {
 	if (size == 0 || array == NULL)
 		return (-1);
-	return(binary_search_recursive(array, 0, size - 1, value));
+	return (binary_search_recursive(array, 0, size - 1, value));
 }
